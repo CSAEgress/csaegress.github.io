@@ -1,0 +1,18 @@
+---
+layout: default 
+---
+
+
+{% assign counter = 1 %}
+{% for post in site.posts %}
+
+<div>
+    [{{ counter }}]
+    <strong>{{ post.author }}</strong>: 
+    <i><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></i>.
+    {{ post.publisher }}, {{ post.date | date: "%-d. %b %Y" }}.
+</div>
+
+
+{% assign counter = counter | plus: 1 %}
+{% endfor %}
