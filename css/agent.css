@@ -3,16 +3,18 @@ body {
     background: #111111;
 }
 
-#agentid {
-    color: #FFFFFF;
+#agentid { /* only for page of agent details */
     font-size: 2em;
+}
+
+.agentid { /* any agent id */
     font-family: Coda, sans-serif;
 }
 
-.faction-res #agentid {
+.faction-res .agentid {
     color: #3679b9;
 }
-.faction-enl #agentid {
+.faction-enl .agentid {
     color: #428f43;
 }
 

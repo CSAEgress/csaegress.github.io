@@ -1,0 +1,16 @@
+---
+title: 我们大家
+permalink: /agents/index.html
+layout: default 
+---
+<link rel="stylesheet" href="/css/agent.css" >
+
+<ul>
+{% for agent in site.agents %}
+    <li class="faction-{{ agent.faction }}">
+        <a href="{{ agent.url }}">
+            <span class="agentid">{{ agent.agent_id }}</span>
+        </a>
+    </li>
+{% endfor %}
+</ul>
