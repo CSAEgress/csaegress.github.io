@@ -1,0 +1,28 @@
+body {
+    padding: 2em;
+    background: #111111;
+}
+
+#agentid {
+    color: #FFFFFF;
+    font-size: 2em;
+    font-family: Coda, sans-serif;
+}
+
+.faction-res #agentid {
+    color: #3679b9;
+}
+.faction-enl #agentid {
+    color: #428f43;
+}
+
+#coordinate,#coordinate a {
+    color: #FFFF77;
+    font-weight: bold;
+}
+
+hr {
+    border-color: #00FFFF;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+}

@@ -1,0 +1,11 @@
+---
+permalink: /agents/index.json
+---
+{
+{% for agent in site.agents %}
+    "{{ agent.agent_id }}": {
+        "faction": "{{ agent.faction }}",
+        "coordinate": "{{ agent.coordinate }}"
+    }{% if forloop.last %}{% else %},{% endif %}
+{% endfor %}
+}

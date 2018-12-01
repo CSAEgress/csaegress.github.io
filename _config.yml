@@ -9,6 +9,12 @@ url: "https://csaegress.agency"
 
 markdown: kramdown
 
+collections:
+    agents:
+        output: true
+        permalink: /:collection/:name
+        
+
 #plugins: ["jekyll-paginate"]
 
 # Exclude from processing.

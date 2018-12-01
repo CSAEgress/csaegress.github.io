@@ -1,0 +1,24 @@
+<html>
+
+<head>
+    {% capture agentpage_title %}特工 {{ page.agent_id }}{% endcapture %}
+    {% include header.html title=agentpage_title %}
+    <link rel="stylesheet" href="/css/agent.css" >
+    <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
+
+    <script src="/scripts/usr/agent.js"></script>
+</head>
+
+<body class="faction-{{ page.faction }}">
+
+<div id="agentid">{{ page.agent_id }}</div>
+<div id="coordinate" data-coordinate="{{ page.coordinate }}">
+坐标: <span>未知</span>
+</div>
+<hr />
+
+
+{{ content }}
+
+</body>
+</html>
