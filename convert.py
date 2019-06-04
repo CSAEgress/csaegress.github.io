@@ -96,8 +96,11 @@ if __name__ == "__main__":
     foods = os.listdir("food/")
     for f in foods:
         if f.endswith(".txt"): continue
+        if f.endswith(".swp"): continue
         filepath = os.path.join("food", f)
         if not os.path.isfile(filepath): continue
+
+        print("Processing: %s" % filepath)
 
         content, metadata = convert(open(filepath, "r").read())
         newname = "%s-%s.html" % (
