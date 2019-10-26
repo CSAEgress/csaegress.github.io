@@ -72,6 +72,15 @@ def convert(html):
         else:
             metadata["author"] = getstring(span)
 
+    metamapping = {
+        "og:title": "title",
+        "og:article:author": "author",
+    }
+    for meta in doc.find("meta"):
+        if meta.attrs["property"] in metamapping:
+            metadata[metamapping[meta.attrs["property"]]] = meta.attrs["content"]
+        
+
     for script in doc.find_all("script"):
         filterMeta(metadata, script)
         script.decompose()
