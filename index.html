@@ -20,6 +20,9 @@ layout: default
                     <span style="float:right">{{ post.date | date: "%Y年%m月%d日" }}</span>
                 </h6>
             </li>
+            {% if post.cover %}
+            <li><img src="/data/coverimages/{{ post.cover }}" class="card-img-top" alt="{{ post.title }}"></li>
+            {% endif %}
             <li class="list-group-item">{{ post.content | strip_html | truncate: 500 }}</li>
         </ul>
 
