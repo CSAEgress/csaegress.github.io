@@ -3,26 +3,28 @@ layout: default
 ---
 
 
+<div class="d-flex flex-row flex-wrap">
 {% for post in site.posts %}
 
-<div class="card">
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-            <h5 class="card-title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h5>
-            <h6 class="card-subtitle text-muted">
-                {{ post.author }}
-                <div class="rightarrow">
-                    <svg viewBox="0 0 48 48" height="100%" width="100%"><path d="M20 14l10 10-10 10z"></path></svg>
-                </div>
-                {{ post.publisher }}
-                <span style="float:right">{{ post.date | date: "%Y年%m月%d日" }}</span>
-            </h6>
-        </li>
-        <li class="list-group-item">{{ post.content | strip_html | truncate: 500 }}</li>
-    </ul>
+<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h5 class="card-title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h5>
+                <h6 class="card-subtitle text-muted">
+                    {{ post.author }}
+                    <div class="rightarrow">
+                        <svg viewBox="0 0 48 48" height="100%" width="100%"><path d="M20 14l10 10-10 10z"></path></svg>
+                    </div>
+                    {{ post.publisher }}
+                    <span style="float:right">{{ post.date | date: "%Y年%m月%d日" }}</span>
+                </h6>
+            </li>
+            <li class="list-group-item">{{ post.content | strip_html | truncate: 500 }}</li>
+        </ul>
 
-
+    </div>
 </div>
 
-
 {% endfor %}
+</div>

@@ -13,6 +13,10 @@ collections:
     agents:
         output: true
         permalink: /:collection/:name/
+
+    topics:
+        output: true
+        permalink: /:collection/:name/
         
 
 #plugins: ["jekyll-paginate"]

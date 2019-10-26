@@ -1,0 +1,18 @@
+nav {
+    box-shadow: 0 1px 8px rgb(0,0,0,0.5);
+}
+
+.rightarrow{
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+}
+
+nav.bg-light{
+    background-color: #79419d !important;
+}
+
+.navbar-brand{
+    color: #FFFFFF !important;
+    font-weight: bold;
+}

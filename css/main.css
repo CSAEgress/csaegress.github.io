@@ -5,24 +5,5 @@ body {
 
 .card {
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
-    margin: 1.5em;
-}
-
-nav {
-    box-shadow: 0 1px 8px rgb(0,0,0,0.5);
-}
-
-.rightarrow{
-    height: 18px;
-    width: 18px;
-    display: inline-block;
-}
-
-nav.bg-light{
-    background-color: #79419d !important;
-}
-
-.navbar-brand{
-    color: #FFFFFF !important;
-    font-weight: bold;
+    margin: 1em 0.2em 0.5em 0.2em;
 }
