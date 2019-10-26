@@ -12,7 +12,20 @@ layout: default
             <li class="list-group-item">
                 <h5 class="card-title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h5>
                 <h6 class="card-subtitle text-muted">
-                    {{ post.author }}
+                    {% if site.data.authors[post.author] %} 
+                        {% for agent in site.agents %}
+                            {% if agent.agent_id == site.data.authors[post.author] %}
+                                {% assign agent_faction = agent.faction %}
+                            {% endif %}
+                        {% endfor %}
+                        <a 
+                            {% if agent_faction %}class="agentid faction-{{ agent_faction }}"{% endif %}
+                            href="/agents/{{ site.data.authors[post.author] | downcase }}/" target="_blank">
+                        {{ post.author }}
+                        </a>
+                    {% else %}
+                        {{ post.author }}
+                    {% endif %}
                     <div class="rightarrow">
                         <svg viewBox="0 0 48 48" height="100%" width="100%"><path d="M20 14l10 10-10 10z"></path></svg>
                     </div>

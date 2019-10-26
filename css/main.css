@@ -7,3 +7,16 @@ body {
     box-shadow: 0 1px 4px 0 rgba(0,0,0,0.14);
     margin: 1em 0.2em 0.5em 0.2em;
 }
+
+.agentid { /* any agent id */
+    font-family: Coda, sans-serif !important;
+    font-weight: bold;
+}
+
+.agentid.faction-res {
+    color: #3679b9 !important;
+}
+.agentid.faction-enl {
+    color: #428f43 !important;
+}
+

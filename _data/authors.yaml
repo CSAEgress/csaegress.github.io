@@ -1,0 +1,16 @@
+# 这里定义了将作者笔名映射到特工ID的办法
+# 文章里的署名，通过此种映射后，可以被程序识别。这样会在文章底部
+# 1) 作者名: 会有到个人资料的链接
+# 2) 作者名会根据阵营设置颜色
+
+"睡睡鸮": "dasKupfer"
+"dasKupfer": "dasKupfer"
+"(⊙v⊙)": "dasKupfer"
+"鸮": "dasKupfer"
+
+"Neo球": "NeoAtlantis"
+"Neo": "NeoAtlantis"
+"NeoAtlantis": "NeoAtlantis"
+"KajiRyouji": "NeoAtlantis"
+
+"NeptuneTang": "NeptuneTang"
