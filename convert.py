@@ -103,9 +103,16 @@ def convert(html):
 
 if __name__ == "__main__":
     foods = os.listdir("food/")
+    existing = "|".join(os.listdir("_posts/"))
+
     for f in foods:
         if f.endswith(".txt"): continue
         if f.endswith(".swp"): continue
+        fnamehash = hashlib.sha256(f.encode("utf-8")).hexdigest()
+        if fnamehash in existing:
+            print("Skip: %s" % f)
+            continue
+
         filepath = os.path.join("food", f)
         if not os.path.isfile(filepath): continue
 
@@ -114,7 +121,7 @@ if __name__ == "__main__":
         content, metadata = convert(open(filepath, "r").read())
         newname = "%s-%s.html" % (
             metadata["publish_time"],
-            hashlib.sha256(f.encode("utf-8")).hexdigest()
+            fnamehash
         )
 
         open(os.path.join("_posts", newname), "wb+").write(content)
