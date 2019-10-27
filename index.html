@@ -6,20 +6,31 @@ layout: default
 <div class="d-flex flex-row flex-wrap">
 {% for post in site.posts %}
 
+
+{% assign agent_faction = undefined %}
+{% if site.data.authors[post.author] %} 
+    {% for agent in site.agents %}
+        {% if agent.agent_id == site.data.authors[post.author] %}
+            {% assign agent_faction = agent.faction %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
 <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
     <div class="card">
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
-                <h5 class="card-title"><a href="{{ post.url }}" target="_blank">{{ post.title }}</a></h5>
+                <h5 class="card-title">
+                    <a
+                        {% if agent_faction %}class="faction-{{ agent_faction }}"{% endif %}
+                        href="{{ post.url }}"
+                        target="_blank"
+                    >{{ post.title }}</a>
+                </h5>
                 <h6 class="card-subtitle text-muted">
-                    {% if site.data.authors[post.author] %} 
-                        {% for agent in site.agents %}
-                            {% if agent.agent_id == site.data.authors[post.author] %}
-                                {% assign agent_faction = agent.faction %}
-                            {% endif %}
-                        {% endfor %}
+                    {% if agent_faction %}
                         <a 
-                            {% if agent_faction %}class="agentid faction-{{ agent_faction }}"{% endif %}
+                            class="agentid faction-{{ agent_faction }}"
                             href="/agents/{{ site.data.authors[post.author] | downcase }}/" target="_blank">
                         {{ post.author }}
                         </a>

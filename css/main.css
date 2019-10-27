@@ -13,10 +13,10 @@ body {
     font-weight: bold;
 }
 
-.agentid.faction-res {
+.faction-res {
     color: #3679b9 !important;
 }
-.agentid.faction-enl {
+.faction-enl {
     color: #428f43 !important;
 }
 
