@@ -48,6 +48,9 @@ layout: default
             <img src="/data/coverimages/{{ post.cover }}" class="card-img-top" alt="{{ post.title }}">
             {% endif %}
             <li class="list-group-item">{{ post.content | strip_html | truncate: 500 }}</li>
+            <li class="list-group-item">
+                <iframe class="embed-disqus" src="embed-disqus.html#{{ post.url }}#{{ post.path }}"></iframe>
+            </li>
         </ul>
 
     </div>

@@ -20,3 +20,10 @@ body {
     color: #428f43 !important;
 }
 
+.embed-disqus{
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    width: 100%;
+
+}
