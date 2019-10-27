@@ -7,6 +7,7 @@ import base64
 import os
 import yaml
 import hashlib
+import re
 import imghdr
 
 
@@ -44,11 +45,13 @@ def downloadImage(url, outputpath, overwrite=False):
 
 
 def filterMeta(metadata, script):
-    lines = str(script).strip().split("\n")
-    for l in lines:
-        l = l.strip()
-        if l.startswith("var publish_time"):
-            metadata["publish_time"] = l.split("\"")[1]
+    scriptcontent = str(script).strip()
+
+    if "publish_time" in scriptcontent:
+        search = re.search("20[0-9]{2}\\-(0[1-9]|1[0-2])\\-[0-3][0-9]", scriptcontent)
+        if search:
+            date = search[0]
+            metadata["publish_time"] = date
 
 
 def convert(html):
@@ -76,11 +79,11 @@ def convert(html):
         "og:title": "title",
         "og:article:author": "author",
     }
-    for meta in doc.find("meta"):
-        if meta.attrs["property"] in metamapping:
+    for meta in doc.find_all("meta"):
+        if "property" in meta.attrs and meta.attrs["property"] in metamapping:
             metadata[metamapping[meta.attrs["property"]]] = meta.attrs["content"]
-        
-
+    
+    # extract metadata from script
     for script in doc.find_all("script"):
         filterMeta(metadata, script)
         script.decompose()
