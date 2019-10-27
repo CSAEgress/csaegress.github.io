@@ -1,3 +1,7 @@
+body{
+    padding-top: 5.5rem;
+}
+
 nav {
     box-shadow: 0 1px 8px rgb(0,0,0,0.5);
 }
@@ -8,11 +12,19 @@ nav {
     display: inline-block;
 }
 
-nav.bg-light{
+nav.bg-dark{
     background-color: #79419d !important;
 }
 
-.navbar-brand{
+.navbar-brand,.nav-link{
     color: #FFFFFF !important;
-    font-weight: bold;
+}
+
+.footbar {
+    width: 100%;
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 5em;
+    font-size: 0.9rem;
+    color: #808080;
 }

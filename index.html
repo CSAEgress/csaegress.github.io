@@ -45,7 +45,7 @@ layout: default
                 </h6>
             </li>
             {% if post.cover %}
-            <li><img src="/data/coverimages/{{ post.cover }}" class="card-img-top" alt="{{ post.title }}"></li>
+            <img src="/data/coverimages/{{ post.cover }}" class="card-img-top" alt="{{ post.title }}">
             {% endif %}
             <li class="list-group-item">{{ post.content | strip_html | truncate: 500 }}</li>
         </ul>
