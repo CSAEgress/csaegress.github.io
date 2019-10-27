@@ -1,6 +1,7 @@
 ---
 title: 联系我们
 layout: default
+permalink: /contact/
 ---
 
 ### 加入社群
