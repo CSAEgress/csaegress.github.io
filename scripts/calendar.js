@@ -82,17 +82,28 @@ function newMonthCard(year, month){
 
 
 async function init(){
+    const now = new Date();
     var allCalendarEvents = await GET_CALENDAR_EVENTS();
 
     // Set up month calendars
     var lastShownYear = -1, lastShownMonth = -1;
-    allCalendarEvents.forEach(function(e){
-        if(!(lastShownYear == e.year && lastShownMonth == e.month)){
-            $(newMonthCard(e.year, e.month)).appendTo("#calendar-cards");
-            lastShownYear = e.year;
-            lastShownMonth = e.month;
+    var showingDate = now,
+        showingDateEnd_getTime =
+            allCalendarEvents[allCalendarEvents.length-1].date.getTime();
+    while(showingDate.getTime() < showingDateEnd_getTime){
+        if(!(
+            lastShownYear == showingDate.getFullYear() &&
+            lastShownMonth == showingDate.getMonth()
+        )){
+            $(newMonthCard(
+                showingDate.getFullYear(),
+                showingDate.getMonth() + 1
+            )).appendTo("#calendar-cards");
+            lastShownYear = showingDate.getFullYear();
+            lastShownMonth = showingDate.getMonth();
         }
-    });
+        showingDate = new Date(showingDate.getTime() + 86400000 * 15);
+    }
 
     // Mark events on date
     allCalendarEvents.forEach(function(e){
@@ -110,6 +121,11 @@ async function init(){
             ;
         }
     });
+
+    // mark today
+    $("#" + getCellID(now.getFullYear(), now.getMonth()+1, now.getDate()))
+        .addClass("calendar-today")
+    ;
 }
 
 init();
