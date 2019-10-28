@@ -1,0 +1,65 @@
+---
+layout: default
+title: 活动日历
+permalink: /calendar/
+---
+
+<script src="/scripts/calendar-module.js"></script>
+<script src="/scripts/calendar.js"></script>
+<style>
+#calendar-template{ display: none }
+.calendar-cell,.calendar-cell th,td{
+    text-align: center;
+    border: none !important;
+    padding: 0px !important;
+    margin: 2px !important;
+}
+.calendar-cell:hover{
+    background: #DDDDDD !important;
+}
+.calendar-cell-label > td{
+    font-size: 0.55rem;
+    padding: 0 0.1rem 0 0.1rem !important;
+}
+.event-xma,.event-md,.event-ifs,.event-other{
+    opacity: 0;
+    font-weight: bold;
+}
+
+.event-xma{ background: #CC0000; color: white; }
+.event-md { background: #FF8800; color: black; }
+.event-ifs{ background: #00FFFF; }
+.event-other{ background: black; color: white; }
+
+</style>
+
+
+<div id="calendar-cards" class="d-flex flex-row flex-wrap">
+
+</div>
+
+<div id="calendar-template" class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <h5 class="card-title">
+                    <span name="year"></span> 年
+                    <span name="month"></span> 月
+                </h5>
+            </li>
+        </ul>
+            
+        <table class="table table-bordered">
+            <thead><tr>
+                <th>日</th>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th>六</th>
+            </tr></thead>
+            <tbody></tbody>
+        </table>
+    </div>
+</div>
