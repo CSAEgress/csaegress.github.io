@@ -118,6 +118,7 @@ function onCalendarCellClicked(){
 async function init(){
     const now = new Date();
     var allCalendarEvents = await GET_CALENDAR_EVENTS();
+    $("#loading").remove();
 
     // Set up month calendars
     var lastShownYear = -1, lastShownMonth = -1;
