@@ -17,15 +17,15 @@ permalink: /contact/
 加群、投稿、或者提出意见，请联系：
 
 * 群主: [@Lemange](https://t.me/Lemange), [@zhouq98](https://t.me/zhouq98)
-* 编辑: [@dasKupfer](https://t.me/dasKupfer), [@NeptuneTang](https://t.me/NeptuneTang) 或 [@SiriusShan](https://t.me/Siriusshan)
+* 编辑: [@dasKupfer](https://t.me/dasKupfer), [@NeptuneTang](https://t.me/NeptuneTang) 或 [@Arekusanda](https://t.me/Arekusanda)
 * 网站技术和其他一般话题: @NeoAtlantis, 请用 [Telegram](https://t.me/NeoAtlantis) 或 [这个联系表单][GOOGLEFORM]。
 
 For accessing our community, posting your siterep, or reporting any issues, please
 contact:
 
 * Moderator: [@Lemange](https://t.me/Lemange), [@zhouq98](https://t.me/zhouq98)
-* Editors: [@dasKupfer](https://t.me/dasKupfer), [@NeptuneTang](https://t.me/NeptuneTang) 或 [@SiriusShan](https://t.me/Siriusshan)
-* IT and other general topics: @NeoAtlantis, via [Telegram](https://t.me/NeoAtlantis) or [this online form][GOOGLEFORM]).
+* Editors: [@dasKupfer](https://t.me/dasKupfer), [@NeptuneTang](https://t.me/NeptuneTang) or [@Arekusanda](https://t.me/Arekusanda)
+* IT and other general topics: @NeoAtlantis, via [Telegram](https://t.me/NeoAtlantis) or [this online form][GOOGLEFORM].
 
 
 [GOOGLEFORM]: https://docs.google.com/forms/d/e/1FAIpQLScM5Mt9z3VDcs0W5w-At-IY68fksjM84jdGJ59qVwlOBL50DA/viewform?usp=sf_link
