@@ -80,6 +80,40 @@ function newMonthCard(year, month){
     return newCard;
 }
 
+function paddingZeros(i, total){
+    var s = i.toString();
+    return "000000000".slice(0, total-s.length) + s;
+}
+
+function onCalendarCellClicked(){
+    var events = $(this).data("events");
+
+    $(".modal-body").empty();
+    
+
+    events.forEach(function(e){
+        $("<div>")
+        .append($("<span>").text(
+            paddingZeros(e.hour, 2) + ":" + paddingZeros(e.minute, 2)
+        ).css("padding-right", "1em"))
+        .append(
+            $("<span>").text(e.location).css("padding-right", "1em")
+        )
+        .append($("<a>", {
+            href: e.url || "#",
+            target: (e.url?"_blank":"")
+        }).text(e.type + " :: " + e.name))
+
+        .appendTo(".modal-body");
+    });
+    
+    $("#calendar-events-dialog span[name=\"year\"]").text(events[0].year);
+    $("#calendar-events-dialog span[name=\"month\"]").text(events[0].month);
+    $("#calendar-events-dialog span[name=\"day\"]").text(events[0].day);
+    $("#calendar-events-dialog").modal("show");
+}
+
+
 
 async function init(){
     const now = new Date();
@@ -107,19 +141,23 @@ async function init(){
 
     // Mark events on date
     allCalendarEvents.forEach(function(e){
-        var cellID = getCellID(e.year, e.month, e.day);
+        var hashCellID = "#" + getCellID(e.year, e.month, e.day);
         if(["XMA", "MD", "IFS"].includes(e.type)){
-            $("#" + cellID)
+            $(hashCellID)
                 .find(".event-" + e.type.toLowerCase())
                 .css("opacity", "1.0")
             ;
         } else {
-            $("#" + cellID)
+            $(hashCellID)
                 .find(".event-other")
                 .text(e.type)
                 .css("opacity", "1.0")
             ;
         }
+        if(!$(hashCellID).data("events")){
+            $(hashCellID).click(onCalendarCellClicked).data("events", []);
+        }
+        $(hashCellID).data("events").push(e);
     });
 
     // mark today

@@ -60,6 +60,8 @@ async function getAllEvents(){
         events[i]["year"]  = events[i]["date"].getFullYear();
         events[i]["month"] = events[i]["date"].getMonth() + 1;
         events[i]["day"]   = events[i]["date"].getDate();
+        events[i]["hour"]  = events[i]["date"].getHours();
+        events[i]["minute"]  = events[i]["date"].getMinutes();
 
     }
     events.sort(function(a,b){
