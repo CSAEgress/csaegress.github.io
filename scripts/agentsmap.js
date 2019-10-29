@@ -44,7 +44,7 @@ var map = L.map("map").setView(DEFAULT_CENTER, 4);
 
 
 var cartoAttr = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
-var cartoUrl = 'http://{s}.basemaps.cartocdn.com/{theme}/{z}/{x}/{y}.png';
+var cartoUrl = 'https://{s}.basemaps.cartocdn.com/{theme}/{z}/{x}/{y}.png';
 L.tileLayer(cartoUrl,{attribution:cartoAttr,theme:'dark_all'}).addTo(map);
 
 /*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
