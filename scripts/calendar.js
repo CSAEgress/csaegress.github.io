@@ -125,6 +125,7 @@ async function init(){
     var showingDate = now,
         showingDateEnd_getTime =
             allCalendarEvents[allCalendarEvents.length-1].date.getTime();
+
     while(showingDate.getTime() < showingDateEnd_getTime){
         if(!(
             lastShownYear == showingDate.getFullYear() &&

@@ -9,10 +9,14 @@
 
 <body>
 {% include navbar.html %}
+{% if page.containerless %}
+{{ content }}
+{% else %}
 <div class="container">
 {{ content }}
 </div>
 {% include footbar.html %}
+{% endif %}
 </body>
 
 </html>

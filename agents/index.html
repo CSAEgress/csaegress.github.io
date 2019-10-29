@@ -1,11 +1,28 @@
 ---
 title: 我们大家
 permalink: /agents/index.html
-layout: default 
+layout: default
+containerless: true
 ---
-<!--<link rel="stylesheet" href="/css/agent.css" >-->
 
-<ul>
+<link rel="stylesheet" href="/css/leaflet.css"/>
+<link rel="stylesheet" href="/css/agentsmap.css" >
+<!--<script src="/scripts/ext/leaflet.js"></script>-->
+<script>
+const AGENTS = {
+    {% for agent in site.agents %}
+        "{{ agent.agent_id }}": {
+            "faction": "{{ agent.faction }}",
+            "coordinate": "{{ agent.coordinate }}"
+        },
+    {% endfor %}
+}
+</script>
+<script src="/scripts/agentsmap.js"></script>
+
+<div id="map"></div> 
+
+<!--<ul>
 {% for agent in site.agents %}
     <li class="faction-{{ agent.faction }}">
         <a href="{{ agent.url }}">
@@ -13,4 +30,4 @@ layout: default
         </a>
     </li>
 {% endfor %}
-</ul>
+</ul>-->

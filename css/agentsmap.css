@@ -1,0 +1,8 @@
+#map{
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 3.5rem;
+    bottom: 0;
+}
