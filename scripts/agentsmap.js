@@ -52,7 +52,9 @@ for(var agent_id in AGENTS){
             icon: MARKERS[agent.faction],
             title: agent_id,
             alt: agent_id,
-        }).addTo(map);
+        }).addTo(map)
+        .bindPopup('<a target="_blank" href="/agents/' + agent_id.toLowerCase() + '"/>' + agent_id + '</a>')
+        ;
     }
 };
 
