@@ -6,3 +6,10 @@
     top: 3.5rem;
     bottom: 0;
 }
+
+.leaflet-tooltip{
+    border: none !important;
+    box-shadow: none !important;
+    color: #FFFFFF !important;
+    background: none !important;
+}
