@@ -1,10 +1,10 @@
 ---
 layout: agent
 
-title: Gudagudako
-agent_id: Gudagudako 
+title:    AneurinenTardis
+agent_id: AneurinenTardis 
 faction: enl
 coordinate: 30.659,104.062
 ---
 
-Gudagudako
+某安
