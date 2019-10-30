@@ -1,9 +1,9 @@
 ---
-agent_id: 毛熊
+agent_id: Kagerox
 coordinate: 50.439,30.518
 faction: enl
 layout: agent
-title: 毛熊
+title: Kagerox 
 
 ---
 
