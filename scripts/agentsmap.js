@@ -40,7 +40,10 @@ const MARKERS = {
 };
 
 
-var map = L.map("map").setView(DEFAULT_CENTER, 4);
+var map = L.map("map", {
+    minZoom: 2,
+    maxBounds: [ [-90,-181], [90, 181] ],
+}).setView(DEFAULT_CENTER, 4);
 
 
 var cartoAttr = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
