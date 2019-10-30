@@ -8,9 +8,9 @@ import random
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument("-f", choices=["R", "E", "r", "e", "res", "enl"], required=True)
-parser.add_argument("-c", type=str)
+parser.add_argument("faction", choices=["R", "E", "r", "e", "res", "enl"])
 parser.add_argument("id", type=str)
+parser.add_argument("-c", type=str, required=True)
 
 args = parser.parse_args()
 
@@ -36,7 +36,7 @@ if args.c:
 output = {
     "title": args.id,
     "agent_id": args.id,
-    "faction": "res" if args.f.lower().startswith("r") else "enl",
+    "faction": "res" if args.faction.lower().startswith("r") else "enl",
     "layout": "agent",
     "coordinate": coordinates
 }

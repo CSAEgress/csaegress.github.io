@@ -1,9 +1,10 @@
 ---
-title: 9liang
-agent_id: 9liang 
+agent_id: 9liang
+coordinate: 39.943,116.414
 faction: res
 layout: agent
-coordinate: 53.796,-1.556
+title: 9liang
+
 ---
 
 9liang

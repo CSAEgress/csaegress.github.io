@@ -1,10 +1,10 @@
 ---
-layout: agent
-
-title: MichelleBaby
-agent_id: MichelleBaby 
+agent_id: MichelleBaby
+coordinate: 39.929,116.431
 faction: enl
-coordinate: 53.381,-1.470 
+layout: agent
+title: MichelleBaby
+
 ---
 
 MichelleBaby
