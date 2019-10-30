@@ -1,10 +1,10 @@
 ---
 layout: agent
 
-title: gnoluna 
-agent_id: gnoluna
+title:    Gnostikoi
+agent_id: Gnostikoi 
 faction: enl
 coordinate: 48.140,11.558
 ---
 
-gnoluna
+gnostikoi
