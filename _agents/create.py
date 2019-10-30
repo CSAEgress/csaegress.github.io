@@ -15,7 +15,7 @@ parser.add_argument("-c", type=str, required=True)
 args = parser.parse_args()
 
 args.id = args.id.strip()
-if not re.match("[0-9a-z\\_]{1,16}", args.id.lower()):
+if not re.match("[0-9a-z]{1,16}", args.id.lower()):
     print("Invalid agent id.")
     exit(1)
 
@@ -25,7 +25,7 @@ if os.path.exists(args.id + ".md"):
 
 coordinates = ""
 if args.c:
-    matchCoordinates = re.search("(\\-?[0-9]{1,3}(\\.[0-9]+)?)\\,(\\-?[0-9]{1,3}(\\.[0-9]+)?)", args.c)
+    matchCoordinates = re.search("(\\-?[0-9]{1,2}(\\.[0-9]+)?)\\,(\\-?[0-9]{1,3}(\\.[0-9]+)?)", args.c)
     if matchCoordinates:
         lat, lng = matchCoordinates[1], matchCoordinates[3]
         coordinates = "%.3f,%.3f" % (
