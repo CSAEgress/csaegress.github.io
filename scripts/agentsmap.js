@@ -1,17 +1,41 @@
-require(["ext/leaflet"], function(L){
+---
+# /* make this a front matter, to load AGENTS from site static data */
+---
+require(["preloading", "agentsmap.map"], function(GET_PRELOADED_RESOURCE, map){
 
-$(function(){
+    function sanitizeAgentData(agent){
+        if(agent.coordinate){
+            var coordinate = agent.coordinate.split(",");
+            coordinate = [parseFloat(coordinate[0]), parseFloat(coordinate[1])];
+            agent.coordinate = coordinate;
+        }
+        if(agent.faction){
+            agent.faction = (
+                agent.faction.toLowerCase().trim()[0] == "r" ? "res": "enl"
+            );
+        }
+
+        return agent;
+    }
+
+    var AGENTS = {
+        {% for agent in site.agents %}
+            "{{ agent.agent_id }}": sanitizeAgentData({
+                "faction": "{{ agent.faction }}",
+                "coordinate": "{{ agent.coordinate }}"
+            }),
+        {% endfor %}
+    };
+
+    $(function(){
 
 //////////////////////////////////////////////////////////////////////////////
 
 const AGENT_COORDINATES = (function(){
     var ret = {};    
     for(var agent_id in AGENTS){
-        var agent = AGENTS[agent_id];
-        if(agent.coordinate){
-            var coordinate = agent.coordinate.split(",");
-            coordinate = [parseFloat(coordinate[0]), parseFloat(coordinate[1])];
-            ret[agent_id] = coordinate;
+        if(AGENTS[agent_id].coordinate){
+            ret[agent_id] = AGENTS[agent_id].coordinate;
         }
     }
     return ret;
@@ -28,61 +52,43 @@ const DEFAULT_CENTER = (function(){
     return [lat/n, lng/n];
 })();
 
-const MARKERS = {
-    "enl": L.icon({
-        iconUrl: "/css/images/marker-enl.png",
-        iconAnchor: [12, 41],
-    }),
-    "res": L.icon({
-        iconUrl: "/css/images/marker-res.png",
-        iconAnchor: [12, 41],
-    }),
-};
 
-
-var map = L.map("map", {
-    minZoom: 2,
-    maxBounds: [ [-90,-181], [90, 181] ],
-}).setView(DEFAULT_CENTER, 4);
-
-
-var cartoAttr = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
-var cartoUrl = 'https://{s}.basemaps.cartocdn.com/{theme}/{z}/{x}/{y}.png';
-L.tileLayer(cartoUrl,{attribution:cartoAttr,theme:'dark_all'}).addTo(map);
-
-/*L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);*/
-
-
-var agentNameLabels = [];
+map.init(DEFAULT_CENTER);
 
 for(var agent_id in AGENTS){
-    var agent = AGENTS[agent_id];
-    if(AGENT_COORDINATES[agent_id]){
-        var marker = L.marker(AGENT_COORDINATES[agent_id], {
-            icon: MARKERS[agent.faction],
-            title: agent_id,
-            alt: agent_id,
-        })
-        .bindPopup('<a target="_blank" href="/agents/' + agent_id.toLowerCase() + '"/>' + agent_id + '</a>')
-        .addTo(map)
-        ;
-
-        agentNameLabels.push(marker.bindTooltip(agent_id, {
-            permanent: true,
-        }));
-    }
+    if(!AGENT_COORDINATES[agent_id]) continue;
+    map.agent({
+        agent_id: agent_id,
+        coordinate: AGENT_COORDINATES[agent_id],
+        faction: AGENTS[agent_id].faction,
+    });
 };
 
-function resetAgentNameLabelVisibility(){
-    $(".leaflet-tooltip").css("opacity", (
-        map.getZoom() >= 6 ? "1.0" : "0.0")
-    );
+map.refresh();
+
+
+// --------
+// Load data from Google Spreadsheet
+GET_PRELOADED_RESOURCE("profiles").then(function(data){
+    data.forEach(updateAgent);
+    map.refresh();
+});
+
+function updateAgent(agent){
+    if(!agent.agent_id) return;
+    if(!AGENT_COORDINATES[agent.agent_id] && !agent.coordinate) return;
+    if(!AGENTS[agent.agent_id] && !agent.faction) return;
+
+    var update = { agent_id: agent.agent_id };
+    if(agent.coordinate) update.coordinate = agent.coordinate;
+    if(agent.faction) update.faction = agent.faction;
+
+    map.agent(sanitizeAgentData(update));
+    console.log("update agent:", agent.agent_id, update);
 }
 
-map.on("zoomend", resetAgentNameLabelVisibility);
-resetAgentNameLabelVisibility();
+
+
 
 //////////////////////////////////////////////////////////////////////////////
 });

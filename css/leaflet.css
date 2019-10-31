@@ -582,7 +582,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	cursor: pointer;
 	pointer-events: auto;
 	}
-.leaflet-tooltip-top:before,
+/*.leaflet-tooltip-top:before,
 .leaflet-tooltip-bottom:before,
 .leaflet-tooltip-left:before,
 .leaflet-tooltip-right:before {
@@ -591,7 +591,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	border: 6px solid transparent;
 	background: transparent;
 	content: "";
-	}
+	}*/
 
 /* Directions */
 

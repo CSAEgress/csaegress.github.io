@@ -13,3 +13,7 @@
     color: #FFFFFF !important;
     background: none !important;
 }
+
+.leaflet-marker-icon {
+    transition: all 1s;
+}
