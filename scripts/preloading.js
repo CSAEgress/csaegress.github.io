@@ -141,7 +141,7 @@ const fetchPreloadingResource = async function(resourceName){
 }
 
 for(var item in resources){
-    progress = fetchPreloadingResource(item);
+    fetchPreloadingResource(item);
 }
 
 return fetchPreloadingResource;
