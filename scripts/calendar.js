@@ -125,7 +125,7 @@ async function init(){
     var lastShownYear = -1, lastShownMonth = -1;
     var showingDate = now,
         showingDateEnd_getTime =
-            allCalendarEvents[allCalendarEvents.length-1].date.getTime();
+            allCalendarEvents[allCalendarEvents.length-1].timestamp;
 
     while(showingDate.getTime() < showingDateEnd_getTime){
         if(!(
@@ -140,6 +140,7 @@ async function init(){
             lastShownMonth = showingDate.getMonth();
         }
         showingDate = new Date(showingDate.getTime() + 86400000 * 15);
+
     }
 
     // Mark events on date

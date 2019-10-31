@@ -73,12 +73,10 @@ function agent(options){
     }
 
     var agentMarker = agents[agent_id];
-    agentMarker.setOpacity(0);
 
     if(coordinate) agentMarker.setLatLng(coordinate);
     if(options.faction) agentMarker.setIcon(MARKERS[options.faction]);
     
-    setTimeout(function(){ agentMarker.setOpacity(1); }, 1000);
 }
 
 

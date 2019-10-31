@@ -1,6 +1,12 @@
+<!DOCTYPE html>
 <html>
 
 <head>
+    {% if page.debugging %}
+    <script src="/scripts/ext/hnl.mobileConsole.js"></script>
+    <script>if (!mobileConsole.status.initialized){ mobileConsole.init(); }
+    </script>
+    {% endif %}
    
     {% include header.html %}
     <link rel="stylesheet" href="/css/main.css" >
