@@ -6,13 +6,13 @@ var map;
 const MARKERS = {
     "enl": L.icon({
         iconUrl: "/css/images/marker-star-enl.png",
-        iconSize: [64, 64],
-        iconAnchor: [32, 32],
+        iconSize: [54, 54],
+        iconAnchor: [27, 27],
     }),
     "res": L.icon({
         iconUrl: "/css/images/marker-star-res.png",
-        iconSize: [64, 64],
-        iconAnchor: [32, 32],
+        iconSize: [54, 54],
+        iconAnchor: [27, 27],
     }),
 };
 
