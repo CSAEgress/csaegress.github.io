@@ -6,14 +6,14 @@ var map;
 const MARKERS_HALFSIZE = 24;
 const MARKERS = {
     "enl": L.icon({
-        iconUrl: "/css/images/marker-star-enl-2.png",
+        iconUrl: "/css/images/marker-star-enl-3.png",
         iconSize: [MARKERS_HALFSIZE*2,MARKERS_HALFSIZE*2],
-        iconAnchor: [MARKERS_HALFSIZE*2, MARKERS_HALFSIZE*2],
+        iconAnchor: [MARKERS_HALFSIZE, MARKERS_HALFSIZE],
     }),
     "res": L.icon({
-        iconUrl: "/css/images/marker-star-res-2.png",
+        iconUrl: "/css/images/marker-star-res-3.png",
         iconSize: [MARKERS_HALFSIZE*2,MARKERS_HALFSIZE*2],
-        iconAnchor: [MARKERS_HALFSIZE*2, MARKERS_HALFSIZE*2],
+        iconAnchor: [MARKERS_HALFSIZE, MARKERS_HALFSIZE],
     }),
 };
 
