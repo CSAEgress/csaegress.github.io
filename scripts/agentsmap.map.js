@@ -3,16 +3,17 @@ define(["ext/leaflet"], function(L){
 
 var map; 
 
+const MARKERS_HALFSIZE = 24;
 const MARKERS = {
     "enl": L.icon({
-        iconUrl: "/css/images/marker-star-enl.png",
-        iconSize: [54, 54],
-        iconAnchor: [27, 27],
+        iconUrl: "/css/images/marker-star-enl-2.png",
+        iconSize: [MARKERS_HALFSIZE*2,MARKERS_HALFSIZE*2],
+        iconAnchor: [MARKERS_HALFSIZE*2, MARKERS_HALFSIZE*2],
     }),
     "res": L.icon({
-        iconUrl: "/css/images/marker-star-res.png",
-        iconSize: [54, 54],
-        iconAnchor: [27, 27],
+        iconUrl: "/css/images/marker-star-res-2.png",
+        iconSize: [MARKERS_HALFSIZE*2,MARKERS_HALFSIZE*2],
+        iconAnchor: [MARKERS_HALFSIZE*2, MARKERS_HALFSIZE*2],
     }),
 };
 
