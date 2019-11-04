@@ -18,6 +18,24 @@ const MARKERS = {
 };
 
 
+function setBlink(marker){
+    var dimming = false;
+
+    function blink(){
+        var nexttime = 1200; // must > 1000, which is set in CSS transition
+        dimming = !dimming;
+        if(dimming){
+            marker.setOpacity(0.5);
+            nexttime += 1500 * Math.random();
+        } else {
+            marker.setOpacity(1.0);
+            nexttime += 3000 * Math.random();
+        }
+        setTimeout(blink, nexttime);
+    }
+    blink();
+}
+
 
 function resetAgentNameLabelVisibility(){
     $(".leaflet-tooltip").css("opacity", (
@@ -73,6 +91,8 @@ function agent(options){
         agentNameLabels[agent_id] = agents[agent_id].bindTooltip(agent_id, {
             permanent: true,
         });
+
+        setBlink(agentNameLabels[agent_id]);
 
         return;
     }
