@@ -33,7 +33,11 @@ function init(center){
 
 
     setTimeout(function(){
-        var cartoAttr = '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, &copy; <a href="http://cartodb.com/attributions">CartoDB</a>';
+        var cartoAttr = [
+            '&copy; <a href="http://www.freepik.com">Freepik</a>',
+            '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            '&copy; <a href="http://cartodb.com/attributions">CartoDB</a>'
+        ].join(", ");
         var cartoUrl = 'https://{s}.basemaps.cartocdn.com/{theme}/{z}/{x}/{y}.png';
         L.tileLayer(cartoUrl,{attribution:cartoAttr,theme:'dark_all'}).addTo(map);
     }, 1);

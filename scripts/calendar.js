@@ -146,6 +146,7 @@ async function init(){
     // Mark events on date
     allCalendarEvents.forEach(function(e){
         var hashCellID = "#" + getCellID(e.year, e.month, e.day);
+        if($(hashCellID).length < 1) return;
         if(["XMA", "MD", "IFS"].includes(e.type)){
             $(hashCellID)
                 .find(".event-" + e.type.toLowerCase())
