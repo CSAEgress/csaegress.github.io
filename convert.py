@@ -67,13 +67,15 @@ def convert(html):
         "publisher": "Unknown",
     }
 
-    for span in doc.find(id="meta_content").find_all("span", class_="rich_media_meta"):
-        if "id" in span.attrs:
-            if span.attrs["id"] == "copyright_logo": continue
-            if span.attrs["id"] == "profileBt":
-                metadata["publisher"] = getstring(span.find(id="js_name"))
-        else:
-            metadata["author"] = getstring(span)
+    metacontent = doc.find(id="meta_content")
+    if metacontent:
+        for span in metacontent.find_all("span", class_="rich_media_meta"):
+            if "id" in span.attrs:
+                if span.attrs["id"] == "copyright_logo": continue
+                if span.attrs["id"] == "profileBt":
+                    metadata["publisher"] = getstring(span.find(id="js_name"))
+            else:
+                metadata["author"] = getstring(span)
 
     metamapping = {
         "og:title": "title",
