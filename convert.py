@@ -99,6 +99,8 @@ def convert(html):
             filename = downloadImage(url, "data/images/")
             newUrl = "/data/images/" + filename
             tag["src"] = newUrl
+
+    metadata["author"] = [metadata["author"]]
     
     return b"---\n%s\n---\n%s" % (
         yaml.dump(metadata, default_flow_style=False).encode("utf-8"),
