@@ -21,9 +21,9 @@
 
 {{ content }}
 
-<div>文章列表</div>
+<div class="item">文章列表</div>
 
-<div style="color: #FFFFFF">
+<div class="item-list">
 {% for post in site.posts %}
 {% assign is_author = false %}
 
@@ -34,8 +34,9 @@
 {% endfor %}
 
 {% if is_author %}
-
-    {{ post.title }} 
+    <div class="item-line">
+        <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
+    </div>
 
 {% endif %}
 {% endfor %}
