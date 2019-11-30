@@ -18,7 +18,21 @@
 <hr />
 
 
+
 {{ content }}
+
+<div>文章列表</div>
+
+<div style="color: #FFFFFF">
+{% for post in site.posts %}
+{% if site.data.authors[post.author] == page.agent_id %} 
+
+    {{ post.title }} 
+
+{% endif %}
+{% endfor %}
+</div>
+
 
 </body>
 </html>
