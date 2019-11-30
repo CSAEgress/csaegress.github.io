@@ -1,0 +1,18 @@
+{% assign agent_faction = undefined %}
+{% if site.data.authors[include.author] %} 
+    {% for agent in site.agents %}
+        {% if agent.agent_id == site.data.authors[include.author] %}
+            {% assign agent_faction = agent.faction %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if agent_faction %}
+<a 
+    class="agentid faction-{{ agent_faction }}"
+    href="/agents/{{ site.data.authors[include.author] | downcase }}/" target="_blank">
+    {{ include.author }}
+</a>
+{% else %}
+{{ include.author }}
+{% endif %}

@@ -25,7 +25,15 @@
 
 <div style="color: #FFFFFF">
 {% for post in site.posts %}
-{% if site.data.authors[post.author] == page.agent_id %} 
+{% assign is_author = false %}
+
+{% for author in post.author %}
+    {% if site.data.authors[author] == page.agent_id %}
+        {% assign is_author = true %}
+    {% endif %}
+{% endfor %}
+
+{% if is_author %}
 
     {{ post.title }} 
 
