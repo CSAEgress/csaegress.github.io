@@ -11,15 +11,20 @@
 
 <body class="faction-{{ page.faction }}">
 
-<div id="agentid" class="agentid">{{ page.agent_id }}</div>
+<div id="agentid" class="agentid" data-agentid="{{ page.agent_id}}">
+{{ page.agent_id }}
+</div>
+
 <div id="coordinate" data-coordinate="{{ page.coordinate }}">
 坐标: <span>未知</span>
 </div>
 <hr />
 
 
+<div id="introduction">
+{{ content | "这个家伙很懒，什么都没有写" }}
+</div>
 
-{{ content }}
 
 <div class="item">TA的文章</div>
 

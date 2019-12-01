@@ -44,7 +44,7 @@ div.item{
     margin-bottom: 0.2em;
 }
 
-div.item,div.item-list{
+div.item,div.item-list,#introduction{
     padding: 0.2em 0.5em 0.2em 0.5em;
 }
 
@@ -58,4 +58,11 @@ div.item {
 
 div.item-list .item-line,a,a:hover {
     color: #00c2bd;
+}
+
+#introduction{
+    color: #00c2bd;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    display: none;
 }

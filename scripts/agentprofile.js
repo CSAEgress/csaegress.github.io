@@ -1,9 +1,11 @@
 requirejs([
     "jquery",
     "ext/mgrs",
+    "preloading",
 ], function(
     $,
-    mgrs
+    mgrs,
+    GET_PRELOADING_RESOURCES
 ){
 //----------------------------------------------------------------------------
 
@@ -27,8 +29,22 @@ function setCoordinate(obj){
 
 
 $(function(){
-    setCoordinate("#coordinate");
+    const agent_id = $("#agentid").attr("data-agentid");
+    setTimeout(function(){setCoordinate("#coordinate");}, 1);
 
+    GET_PRELOADING_RESOURCES("profiles")
+    .then(function(data){
+        data.forEach(function(agent){
+            if(agent.agent_id != agent_id) return;
+            if(agent.introduction && agent.introduction.trim()){
+                $("#introduction").text(agent.introduction);
+            }
+        });
+        $("#introduction").show();
+    })
+    .catch(function(){
+        $("#introduction").show();
+    });
 
 
 });
