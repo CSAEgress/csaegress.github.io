@@ -34,17 +34,14 @@
 {% endfor %}
 
 {% if is_author %}
-    <div class="item-line" style="display: table-row; width:100%">
+    <div class="item-line">
 
-        <div class="rightarrow" style="display: table-cell">
+        <div class="rightarrow">
             <svg viewBox="18 0 30 48" height="100%" width="100%"><path d="M20 14l10 10-10 10z"></path></svg>
         </div>
 
-        <div style="display: table-cell">
         <a href="{{ post.url }}" target="_blank">{{ post.title }}</a>
-        </div>
 
-        <div style="display: table-cell; text-align:right; color: #ffd752">{{ post.publish_time | date:'%Y.%m.%d' }}</div>
     </div>
 
 {% endif %}
