@@ -3,6 +3,16 @@ body {
     background: #111111;
 }
 
+.rightarrow{
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+}
+.rightarrow svg{
+    stroke: #00c2bd;
+    fill: #00c2bd;
+}
+
 #agentid { /* only for page of agent details */
     font-size: 2em;
 }
@@ -29,10 +39,17 @@ hr {
     border-width: 1px 0 0 0;
 }
 
+div.item{
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+
+div.item,div.item-list{
+    padding: 0.2em 0.5em 0.2em 0.5em;
+}
+
 div.item {
     background-image: linear-gradient(to right, #463c14 , #000000);
-    margin: 0 0.5em 0 0.5em;
-    padding: 0.1em 0em 0.1em 0.5em;
     color: #ffd752;
     border-color: #CCCC00;
     border-width: 1px 0 1px 0;
@@ -41,6 +58,4 @@ div.item {
 
 div.item-list .item-line,a,a:hover {
     color: #00c2bd;
-    padding: 0.2em 0 0.2em 0;
-    margin: 0 0.5em 0 0.5em;
 }
