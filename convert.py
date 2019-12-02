@@ -61,6 +61,7 @@ def filterMeta(metadata, script):
 def downloadAndModifyCSSWithImage(oldCSS):
     parts = oldCSS.split(";")
     for i in range(0, len(parts)):
+        parts[i] = parts[i].strip()
         if not parts[i].startswith("background-image:"): continue
         try:
             url = re.search("url\\(\"?([^\"]+)\"?\\)", parts[i])[1]
