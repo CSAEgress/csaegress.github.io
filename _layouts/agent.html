@@ -22,7 +22,7 @@
 
 
 <div id="introduction">
-{{ content | "这个家伙很懒，什么都没有写" }}
+{% if content %}{{ content }}{% else %}这个家伙很懒，什么都没有写{% endif %}
 </div>
 
 
