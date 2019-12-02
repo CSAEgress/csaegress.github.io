@@ -21,10 +21,13 @@ def downloadImage(url, outputpath, overwrite=False):
         ).decode("ascii")
     for ext in exts: # wont download if already
         savepath = os.path.join(outputpath, filename_core + ext)
-        if os.path.isfile(savepath): return filename_core + ext
+        if os.path.isfile(savepath):
+            print("Exists: %s" % url)
+            return filename_core + ext
+
 
     tempsavepath = os.path.join(outputpath, filename_core + ".temp")
-    subprocess.run([
+    cmds = [
         "curl", url, "--output", tempsavepath,
         "-H", 'User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:63.0) Gecko/20100101 Firefox/63.0',
         "-H", 'Accept: */*',
@@ -33,7 +36,8 @@ def downloadImage(url, outputpath, overwrite=False):
         "-H", 'Origin: https://mp.weixin.qq.com',
         "-H", 'Pragma: no-cache',
         "-H", 'Cache-Control: no-cache',
-    ])
+    ]
+    subprocess.run(cmds)
 
     imgtype = imghdr.what(tempsavepath)
     if not imgtype: imgtype = "jpeg"
@@ -52,6 +56,26 @@ def filterMeta(metadata, script):
         if search:
             date = search[0]
             metadata["publish_time"] = date
+
+
+def downloadAndModifyCSSWithImage(oldCSS):
+    parts = oldCSS.split(";")
+    for i in range(0, len(parts)):
+        if not parts[i].startswith("background-image:"): continue
+        try:
+            url = re.search("url\\(\"?([^\"]+)\"?\\)", parts[i])[1]
+            assert url.startswith("http:") or url.startswith("https:")
+            print("CSS Image: %s" % url)
+        except Exception as e:
+            print(e)
+            continue
+
+        filename = downloadImage(url, "data/images/")
+        newUrl = "/data/images/" + filename
+        parts[i] = "background-image: url(%s)" % newUrl
+    return ";".join(parts)
+    
+
 
 
 def convert(html):
@@ -99,6 +123,10 @@ def convert(html):
             filename = downloadImage(url, "data/images/")
             newUrl = "/data/images/" + filename
             tag["src"] = newUrl
+
+    for tag in doc.find_all(style=True):
+        if "background-image" not in tag.attrs["style"]: continue
+        tag.attrs["style"] = downloadAndModifyCSSWithImage(tag.attrs["style"])
 
     metadata["author"] = [metadata["author"]]
     
