@@ -4,6 +4,7 @@ layout: agent
 title: Forev3rNAlway5
 agent_id: Forev3rNAlway5
 faction: enl
-coordinate: 52.376,4.894
+coordinate: 52.350,4.922
 ---
-Forev3rNAlway5
+
+https://sjh.moe/about

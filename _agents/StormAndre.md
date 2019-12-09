@@ -6,4 +6,4 @@ layout: agent
 coordinate: 50.666,10.881
 ---
 
-深山隐居  “太行山上游击队” “山大王”
+请善待单身狗; Please be kind to damn single; Sei nett zu Alleinstehender TKX
