@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    {% include header.html %}
+    <link rel="stylesheet" href="/css/chronology.css" >
+</head>
+
+<body>
+{% include navbar.html %}
+
+
+<div id="chronology">
+    {% for event in page.chronology %}
+
+
+    <div class="section">
+
+    <h2>{{ event.what }}</h2>
+
+    {{ event.when }}
+
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+<script>
+require(["ext/fullpage.min"], function(fullpage){
+
+
+    new fullpage('#chronology', {
+        //options here
+        licenseKey: "88888888-88888888-88888888-88888888",
+        autoScrolling:true,
+        scrollHorizontally: true
+    });
+    //methods
+    //fullpage_api.setAllowScrolling(false);
+
+});
+</script>
+
+
+</body>
+
+</html>
