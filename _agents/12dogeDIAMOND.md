@@ -1,10 +1,10 @@
 ---
-agent_id: Doge_12
+agent_id: 12dogeDIAMOND
 coordinate: 49.596,6.129
 faction: enl
 layout: agent
-title: Doge_12
+title: 12dogeDIAMOND
 
 ---
 
-Doge_12
+12dogeDIAMOND
