@@ -80,7 +80,7 @@ def downloadAndModifyCSSWithImage(oldCSS):
 
 
 def convert(html):
-    doc = BS(html, "lxml")
+    doc = BS(html)#, "lxml")
 
     bin2utf8 = lambda b: b.decode("utf-8")
 
