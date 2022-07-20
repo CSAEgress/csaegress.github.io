@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="9px" height="9px" viewBox="0 0 9 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>编组 7</title>
+    <g id="标题" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="过年-单个样式" transform="translate(-13.000000, -603.000000)">
+            <g id="w-3" transform="translate(9.000000, 599.000000)">
+                <g id="编组-6" transform="translate(3.000000, 3.000000)">
+                    <rect id="矩形备份" stroke="#FCFEB1" x="1.5" y="1.5" width="349" height="90"></rect>
+                    <g id="编组-8备份-3" transform="translate(5.500000, 5.500000) scale(-1, -1) translate(-5.500000, -5.500000) translate(1.000000, 1.000000)">
+                        <rect id="矩形" stroke="#FCFEB1" x="0.5" y="0.5" width="4" height="4"></rect>
+                        <rect id="矩形" fill="#FCFEB1" x="5" y="4" width="4" height="1"></rect>
+                        <polygon id="矩形备份-5" fill="#FCFEB1" transform="translate(4.500000, 7.000000) rotate(-270.000000) translate(-4.500000, -7.000000) " points="2.5 6.5 6.5 6.5 6.5 7.5 2.5 7.5"></polygon>
+                    </g>
+                    <rect id="矩形" fill="#368767" x="0" y="0" width="5" height="5"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
