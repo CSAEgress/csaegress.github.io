@@ -3,3 +3,4 @@ _site
 .jekyll-metadata
 food/
 *.sw?
+.jekyll-cache

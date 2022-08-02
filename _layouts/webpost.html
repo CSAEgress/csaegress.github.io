@@ -1,0 +1,20 @@
+<html>
+
+<head>
+    {% include header.html %}
+    <link rel="stylesheet" href="/css/post.css" >
+</head>
+
+<body>
+{% include navbar.html %}
+
+<div class="container">
+{{ content }}
+</div>
+
+{% include disqus.html %}
+
+{% include footbar.html %}
+</body>
+
+</html>
