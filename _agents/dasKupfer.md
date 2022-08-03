@@ -4,7 +4,7 @@ layout: agent
 title: dasKupfer
 agent_id: dasKupfer
 faction: res
-coordinate: 47.417,8.536
+coordinate: 23.006, 113.127
 ---
 
 dasKupfer 

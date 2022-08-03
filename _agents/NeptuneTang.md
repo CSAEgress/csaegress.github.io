@@ -4,7 +4,7 @@ layout: agent
 title: NeptuneTang
 agent_id: NeptuneTang
 faction: enl
-coordinate: 52.305,4.691
+coordinate: 51.441, 5.467
 ---
 
 NeptuneTang
