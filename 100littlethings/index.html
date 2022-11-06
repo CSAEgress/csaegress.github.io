@@ -1,0 +1,134 @@
+<!doctype html><html><head><title>我和CSAE的100件小事</title><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"><style>@font-face { font-family: "ingress_font"; src: url(./data/ingress_font.ttf); }
+@font-face { font-family: "font_name"; src: url(./data/name_font.ttf); }
+
+body{
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    scroll-behavior: smooth;
+}
+
+input:focus { outline: none }
+#options{
+    background: linear-gradient(180deg, #9794f0, #fac7d4);
+    background-size: cover;
+}
+.fullscreen{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left: 0;
+    right:0;
+    padding: 0;
+    margin: 0;
+}
+#btn-finished-selection{
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    width: 15%;
+    height: auto;
+    z-index: 100;
+}
+
+#choices-header::after{ 
+    content: " "; 
+    display: block;
+    clear: both;
+} 
+
+#choices-header-svg .small {
+    font: 30px sans;
+}
+#choices-header-svg .big {  
+    font: bold 115px "ingress_font";
+    fill: #e57373;
+}
+#footer-btn-done{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+#footer-container{
+    background: #f9c1a3;
+}
+#add-item-input{
+    position:absolute;
+    border:none;/*border-radius:999999px;*/
+    background: none;
+    left: 29%; top: 59%;
+    width: 29%;
+    height:25%;
+    z-index:30;
+
+    text-align: center;
+    opacity: 80%;
+}
+#add-item-input::placeholder{
+    text-align:center;
+}
+#add-item-button,#view-item-button{
+    border:none;
+    background-color: rgb(255,255,255,0.8);
+    color: #e37373;
+    font-weight: bold;
+    margin-left: 0.5em;
+}
+
+.fade-in-div {
+  animation: fadeIn 3s;
+  -webkit-animation: fadeIn 3s;
+  -moz-animation: fadeIn 3s;
+  -o-animation: fadeIn 3s;
+  -ms-animation: fadeIn 3s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+@-ms-keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+.name-input-box{
+    background: none;
+    border-width: 0 0 1px 0;
+    border-color: #ddddf0;
+    border-style: solid;
+    text-align: center;
+    color: #ddddf0;
+    font-family: "font_name";
+    font-size: 6.71vw;
+
+    z-index: 100;
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 60vw;
+}
+.name-input-box::placeholder{
+    color: #ddddf0;
+    opacity: 0.5;
+}</style><script defer="defer" src="app.js"></script></head><body><div id="app" style="display:none"></div></body></html>
